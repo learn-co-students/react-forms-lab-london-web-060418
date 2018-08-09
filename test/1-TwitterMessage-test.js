@@ -11,7 +11,7 @@ describe("<TwitterMessage />", () => {
   describe("Saving input value in state", () => {
     it("should update the state when typing", () => {
       const wrapper = shallow(<TwitterMessage maxChars={140} />);
-      const event = { target: { value: "f" } };
+      const event = { target: { name: "tweet", value: "f" } };
       wrapper.find("input").simulate("change", event);
       expect(wrapper.find("input").props().value).to.deep.equal(
         event.target.value,
